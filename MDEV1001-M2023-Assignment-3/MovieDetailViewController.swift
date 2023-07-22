@@ -10,18 +10,25 @@ import UIKit
 class MovieDetailViewController: UIViewController
 {
     // UI References
-    @IBOutlet weak var AddEditTitleLabel: UILabel!
-    @IBOutlet weak var UpdateButton: UIButton!
     
     // Movie Fields
     
     @IBOutlet weak var thumbnailImage: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var studioTextField: UITextField!
+    @IBOutlet weak var genresTextField: UITextField!
+    @IBOutlet weak var directorsTextField: UITextField!
+    @IBOutlet weak var writersTextField: UITextField!
+    @IBOutlet weak var actorsTextField: UITextField!
+    @IBOutlet weak var yearTextField: UITextField!
+    @IBOutlet weak var lengthTextField: UITextField!
+    @IBOutlet weak var mpaRatingTextField: UITextField!
     @IBOutlet weak var criticsRatingTextField: UITextField!
     
-//    var movie: Movie?
-//    var dataViewController: DataViewController?
+    @IBOutlet weak var descriptionTextview: UITextView!
+    
+    
+
     var selectedPosterImage: UIImage?
     
     override func viewDidLoad()
@@ -30,25 +37,14 @@ class MovieDetailViewController: UIViewController
         
         self.thumbnailImage.layer.borderColor = UIColor.black.cgColor
         self.thumbnailImage.layer.borderWidth = 2
+        self.descriptionTextview.layer.borderColor = UIColor.black.cgColor
+        self.descriptionTextview.layer.borderWidth = 1
         
-//        if let movie = movie
-//        {
-//            // Editing existing movie
-//            titleTextField.text = movie.title
-//            studioTextField.text = movie.studio
-//            criticsRatingTextField.text = "\(movie.criticsrating)"
-//            if let imageData = movie.thumbnail, let image = UIImage(data: imageData) {
-//                thumbnailImage.image = image
-//                }
-//        }
-//        else
-//        {
-//            AddEditTitleLabel.text = "Add Movie"
-//            UpdateButton.setTitle("Add", for: .normal)
-//        }
+        
+
     }
     
-    @IBAction func CancelButton_Pressed(_ sender: UIButton)
+    @IBAction func BackButton_Pressed(_ sender: UIButton)
     {
         dismiss(animated: true, completion: nil)
     }
