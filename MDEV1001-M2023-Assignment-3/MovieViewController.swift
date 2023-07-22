@@ -32,26 +32,27 @@ class MovieViewController: UIViewController , UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieTableViewCell
         
-        let movie = movies[indexPath.row]
+        //let movie = movies[indexPath.row]
         index = indexPath.row
         cell.titleLabel?.text = "DDLJ"
         cell.studioLabel?.text = "Fox Studio"
+        cell.yearLabel?.text = "Releasing Year: 2001"
         
         cell.ratingLabel?.text = "7.9"
         // Set the background color of criticsRatingLabel based on the rating
-        let rating = movie.criticsrating
-        
-        if rating > 7
-        {
-            cell.ratingLabel.backgroundColor = UIColor.green
-            cell.ratingLabel.textColor = UIColor.black
-        } else if rating > 5 {
-            cell.ratingLabel.backgroundColor = UIColor.yellow
-            cell.ratingLabel.textColor = UIColor.black
-        } else {
-            cell.ratingLabel.backgroundColor = UIColor.red
-            cell.ratingLabel.textColor = UIColor.white
-        }
+//        let rating = "7.9"
+//
+//        if rating > 7
+//        {
+//            cell.ratingLabel.backgroundColor = UIColor.green
+//            cell.ratingLabel.textColor = UIColor.black
+//        } else if rating > 5 {
+//            cell.ratingLabel.backgroundColor = UIColor.yellow
+//            cell.ratingLabel.textColor = UIColor.black
+//        } else {
+//            cell.ratingLabel.backgroundColor = UIColor.red
+//            cell.ratingLabel.textColor = UIColor.white
+//        }
         //            let imgData = movie.thumbnail != nil ? UIImage(data: movie.thumbnail!) : nil
         //            cell.thumbnailImage?.image = imgData ?? selectedPosterImage
         return cell
