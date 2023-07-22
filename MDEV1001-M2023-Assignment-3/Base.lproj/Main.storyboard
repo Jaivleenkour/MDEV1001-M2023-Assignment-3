@@ -53,7 +53,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Search"/>
                                 <connections>
-                                    <action selector="AddButton_Pressed:" destination="T1P-4G-FiA" eventType="touchUpInside" id="LQA-TY-jOm"/>
+                                    <action selector="searchButton:" destination="T1P-4G-FiA" eventType="touchUpInside" id="hWw-KF-dgV"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" estimatedRowHeight="130" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5yo-g4-hFG">

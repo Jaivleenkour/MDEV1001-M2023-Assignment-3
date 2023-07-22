@@ -11,8 +11,10 @@ class MovieViewController: UIViewController , UITableViewDelegate, UITableViewDa
 {
     @IBOutlet weak var tableView: UITableView!
    // var movies: [Movie] = []
+    var movies = [Array<Any>]()
     var index = Int()
     var selectedPosterImage: UIImage?
+    var check = "no"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +29,20 @@ class MovieViewController: UIViewController , UITableViewDelegate, UITableViewDa
     
     
     
+    @IBAction func searchButton(_ sender: Any) {
+        check = "yes"
+        self.tableView.backgroundView = nil
+        self.tableView.reloadData()
+        
+    }
     
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        if self.check != "no"{
+            return 4}else{
+                return 0
+            }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
