@@ -17,7 +17,12 @@ class MovieViewController: UIViewController , UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        let noDataLabel: UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+                noDataLabel.text          = "Oops!No data available.\nSearch for movies to retrieve the data."
+        noDataLabel.numberOfLines = 0
+                noDataLabel.textColor     = UIColor.black
+                noDataLabel.textAlignment = .center
+        self.tableView.backgroundView  = noDataLabel
     }
     
     
@@ -26,7 +31,7 @@ class MovieViewController: UIViewController , UITableViewDelegate, UITableViewDa
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
