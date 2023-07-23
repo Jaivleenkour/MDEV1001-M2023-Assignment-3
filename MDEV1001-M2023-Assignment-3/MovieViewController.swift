@@ -25,12 +25,7 @@ class MovieViewController: UIViewController , UITableViewDelegate, UITableViewDa
         apiKey = "80597972"
         
         //self.searchBar.delegate = self
-        let noDataLabel: UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
-                noDataLabel.text          = "Oops!No data available.\nSearch for movies to retrieve the data."
-        noDataLabel.numberOfLines = 0
-                noDataLabel.textColor     = UIColor.black
-                noDataLabel.textAlignment = .center
-        self.tableView.backgroundView  = noDataLabel
+        
     
     }
  
@@ -96,20 +91,14 @@ class MovieViewController: UIViewController , UITableViewDelegate, UITableViewDa
             return self.arr_movies.count
         }else{
             print("c3",self.arr_movies.count)
+            let noDataLabel: UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+                    noDataLabel.text          = "Oops!No data available.\nSearch for movies to retrieve the data."
+            noDataLabel.numberOfLines = 0
+                    noDataLabel.textColor     = UIColor.black
+                    noDataLabel.textAlignment = .center
+            self.tableView.backgroundView  = noDataLabel
             return 0
         }
-        
-        
-//        if self.check != "no"{
-//            print("count",arr_movies.count)
-//            return arr_movies.count
-//
-//
-//        }
-//        else{
-//                return 0
-//            }
-      
         
     }
     
@@ -145,5 +134,42 @@ class MovieViewController: UIViewController , UITableViewDelegate, UITableViewDa
         performSegue(withIdentifier: "MovieDetailSegue", sender: indexPath)
     }
    
-   
+    // Swipe Left Gesture
+        func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
+        {
+            if editingStyle == .delete
+            {
+                let movie = arr_movies[indexPath.row]
+                ShowDeleteConfirmationAlert(for: movie) { confirmed in
+                    if confirmed
+                    {
+                        self.deleteMovie(at: indexPath)
+                    }
+                }
+            }
+        }
+        
+        func ShowDeleteConfirmationAlert(for movie: Movie, completion: @escaping (Bool) -> Void)
+        {
+            let alert = UIAlertController(title: "Delete Movie", message: "Are you sure you want to delete this movie?", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in
+                completion(false)
+            })
+            
+            alert.addAction(UIAlertAction(title: "Delete", style: .destructive) { _ in
+                completion(true)
+            })
+            
+            present(alert, animated: true, completion: nil)
+        }
+        
+        func deleteMovie(at indexPath: IndexPath)
+        {
+            let movie = arr_movies[indexPath.row]
+            self.arr_movies.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            
+        }
+    
 }
