@@ -78,7 +78,7 @@ class MovieViewController: UIViewController , UITableViewDelegate, UITableViewDa
             
         }
         else{
-            let alertController = UIAlertController(title: "Alert", message: "Please enter movie name for retrieving the list of movies.", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Alert", message: "Please enter movie name in search bar for retrieving the list of movies.", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alertController, animated: true, completion: nil)
         }
@@ -92,10 +92,10 @@ class MovieViewController: UIViewController , UITableViewDelegate, UITableViewDa
         }else{
             print("c3",self.arr_movies.count)
             let noDataLabel: UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
-                    noDataLabel.text          = "Oops!No data available.\nSearch for movies to retrieve the data."
+            noDataLabel.text          = "Oops!No data available.\nSearch for movies to retrieve the data."
             noDataLabel.numberOfLines = 0
-                    noDataLabel.textColor     = UIColor.black
-                    noDataLabel.textAlignment = .center
+            noDataLabel.textColor     = UIColor.black
+            noDataLabel.textAlignment = .center
             self.tableView.backgroundView  = noDataLabel
             return 0
         }
@@ -113,13 +113,12 @@ class MovieViewController: UIViewController , UITableViewDelegate, UITableViewDa
         
         
         let url = URL(string: movie.Poster)!
-        // Fetch Image Data
         DispatchQueue.global().async {
-                // Fetch Image Data
-                if let data = try? Data(contentsOf: url) {
-                    DispatchQueue.main.async {
-                        // Create Image and Update Image View
-                        cell.thumbnailImage.image = UIImage(data: data)
+        // Fetch Image Data
+        if let data = try? Data(contentsOf: url) {
+        DispatchQueue.main.async {
+        // Create Image and Update Image View
+        cell.thumbnailImage.image = UIImage(data: data)
                     }
                 }
             }
