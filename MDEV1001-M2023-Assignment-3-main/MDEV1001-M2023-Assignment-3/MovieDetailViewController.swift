@@ -38,7 +38,17 @@ class MovieDetailViewController: UIViewController
         self.thumbnailImage.layer.borderWidth = 2
         self.descriptionTextview.layer.borderColor = UIColor.black.cgColor
         self.descriptionTextview.layer.borderWidth = 1
-        
+        titleTextField.text = movie?.Title
+                    studioTextField.text = movie?.Production
+                    genresTextField.text = movie?.Genre
+                    directorsTextField.text = movie?.Director
+                    writersTextField.text = movie?.Writer
+                    actorsTextField.text = movie?.Actors
+                    lengthTextField.text = movie?.Runtime
+                    yearTextField.text = movie?.Year
+                    descriptionTextview.text = movie?.Plot
+                    mpaRatingTextField.text = movie?.imdbRating
+                    criticsRatingTextField.text = movie?.Rated
         
 
     }
