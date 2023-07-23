@@ -49,13 +49,26 @@ class MovieDetailViewController: UIViewController
                     descriptionTextview.text = movie?.Plot
                     mpaRatingTextField.text = movie?.imdbRating
                     criticsRatingTextField.text = movie?.Rated
+        let url = URL(string: movie!.Poster)!
+
+                    // Fetch Image Data
+                
+                DispatchQueue.global().async {
+                        // Fetch Image Data
+                        if let data = try? Data(contentsOf: url) {
+                            DispatchQueue.main.async {
+                                // Create Image and Update Image View
+                                self.thumbnailImage.image = UIImage(data: data)
+                            }
+                        }
+                    }
         
 
     }
     
     @IBAction func BackButton_Pressed(_ sender: UIButton)
     {
-        
+                dismiss(animated: true, completion: nil)
     }
     
 }
