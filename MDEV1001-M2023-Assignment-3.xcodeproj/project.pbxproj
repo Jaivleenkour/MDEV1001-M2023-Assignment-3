@@ -15,6 +15,7 @@
 		6117F0332A6C78F6005D7644 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6117F0322A6C78F6005D7644 /* MovieViewController.swift */; };
 		6117F0352A6C79E7005D7644 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6117F0342A6C79E7005D7644 /* MovieTableViewCell.swift */; };
 		6117F0372A6C80C9005D7644 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6117F0362A6C80C9005D7644 /* MovieDetailViewController.swift */; };
+		6117F0392A6CDFB6005D7644 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6117F0382A6CDFB6005D7644 /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		6117F0322A6C78F6005D7644 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		6117F0342A6C79E7005D7644 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		6117F0362A6C80C9005D7644 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		6117F0382A6CDFB6005D7644 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				6117F0322A6C78F6005D7644 /* MovieViewController.swift */,
 				6117F0342A6C79E7005D7644 /* MovieTableViewCell.swift */,
 				6117F0362A6C80C9005D7644 /* MovieDetailViewController.swift */,
+				6117F0382A6CDFB6005D7644 /* Movie.swift */,
 			);
 			path = "MDEV1001-M2023-Assignment-3";
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			files = (
 				6117F0352A6C79E7005D7644 /* MovieTableViewCell.swift in Sources */,
 				6117F0372A6C80C9005D7644 /* MovieDetailViewController.swift in Sources */,
+				6117F0392A6CDFB6005D7644 /* Movie.swift in Sources */,
 				6117F01F2A6C7181005D7644 /* AppDelegate.swift in Sources */,
 				6117F0212A6C7181005D7644 /* SceneDelegate.swift in Sources */,
 				6117F0332A6C78F6005D7644 /* MovieViewController.swift in Sources */,

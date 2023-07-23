@@ -27,9 +27,7 @@ class MovieDetailViewController: UIViewController
     
     @IBOutlet weak var descriptionTextview: UITextView!
     
-    
 
-    var selectedPosterImage: UIImage?
     
     override func viewDidLoad()
     {
@@ -46,7 +44,7 @@ class MovieDetailViewController: UIViewController
     
     @IBAction func BackButton_Pressed(_ sender: UIButton)
     {
-        dismiss(animated: true, completion: nil)
+        
     }
     
 }
